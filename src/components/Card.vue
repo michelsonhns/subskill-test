@@ -17,7 +17,11 @@
       daytime: String,
       tag: String,
       alt: String,
-      class_img: String
+      class_img: String,
+      src: {
+        type: String,
+        default: require("@/assets/images/christine_lagarde.png")
+      },
     }
     
   }
