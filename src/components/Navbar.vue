@@ -35,9 +35,18 @@ nav ul
 
 nav ul li
   padding-left 30px
-  margin 0 30px
-nav ul li:first-child
-  list-style none
+
+ul 
+  list-style: none
+
+
+ul li::before 
+  content: "•"
+  margin-right 30px
+
+nav ul li:first-child::before 
+  content: ""
+  
 img
   width 75px
 
