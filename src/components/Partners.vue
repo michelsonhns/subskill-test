@@ -42,6 +42,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  
   img
     margin 48px auto
     width: 168px
@@ -49,7 +50,6 @@
 .card-logo:hover
   background-color #0d2d99
   transition: all 1.1s ease-out;
-
 
 .row
   justify-content space-around
@@ -63,6 +63,7 @@
 @media (min-width: 1131px)
   .row
     display flex
+  
   .card-logo
     width 33%
     display: flex;

@@ -43,10 +43,12 @@
   
 .card
   margin-bottom 70px
+  img
+    cursor: pointer;
   .card__tag
     display inline-block
     background-color #F2F2F2
-    font-family Poppins
+    font-family "Poppins", sans-serif
     padding 7px 16px 7px 18px
   
   .card__tag, .card__time

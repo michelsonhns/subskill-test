@@ -36,7 +36,7 @@ footer
 
 @media (min-width: 1131px)
   footer
-    padding: 112px
+    padding: 70px 283px 70px 282px;
 
   footer ul
     display flex

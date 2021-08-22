@@ -6,11 +6,11 @@
       </div>
       <button class="navbar-toggler" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
       <ul>
-        <li class="nav-item">Toute l’actu</li>
-        <li class="nav-item">Le club</li>
-        <li class="nav-item">Publication</li>
-        <li class="nav-item">Nos partenaires</li>
-        <li class="nav-item">Évènements</li>
+        <li class="nav-item"><a href="#">Toute l’actu</a></li>
+        <li class="nav-item"><a href="#">Le club</a></li>
+        <li class="nav-item"><a href="#">Publication</a></li>
+        <li class="nav-item"><a href="#">Nos partenaires</a></li>
+        <li class="nav-item"><a href="#">Évènements</a></li>
       </ul>
     </nav>
   </div>
@@ -40,28 +40,28 @@ nav
     background-color #FFF
     border none
     font-size 1.8em
+  a 
+    text-decoration none
+    color #2d2d2d
+
 
 @media (min-width: 1131px)
   nav
     padding: 16px 282px 17px 48px;
     button
       display none
-  nav ul
-    display flex
-    margin 0 auto
-
-  nav ul li
-    padding-left 30px
-
-  ul 
-    list-style: none
-
-
-  ul li::before 
-    content: "•"
-    margin-right 30px
-
-  nav ul li:first-child::before 
-    content: ""
-
+    ul
+      display flex
+      margin 0 auto
+      list-style: none
+      li
+        padding-left 30px
+        a:hover
+          font-weight: 400;
+          text-decoration underline
+      :first-child::before 
+        content: ""
+      ::before 
+        content: "•"
+        margin-right 30px
 </style>
