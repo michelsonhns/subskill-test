@@ -1,6 +1,6 @@
 <template>
   <div class="carousel">
-    <a class="btn arrow"><i class="fas fa-arrow-left"></i></a>
+    <button class="btn arrow"><i class="fas fa-arrow-left"></i></button>
       <Card
       v-for="carousel in videos" :key="carousel.id"
       :title="carousel.title"
@@ -10,7 +10,7 @@
       :tag="carousel.tag"
       :class_description="carousel.class_description"
       :class_title="carousel.class_title"/>
-     <a class="btn arrow"><i class="fas fa-arrow-right"></i></a>
+     <button class="btn arrow"><i class="fas fa-arrow-right"></i></button>
   </div>
 </template>
 
@@ -27,17 +27,17 @@ import Card from './Card.vue'
           {
             title: "Défense d’afficher – La ville de Paris contre l’affichage sauvage",
             daytime: "10 août 2021",
-            src: require("@/assets/images/article-cover.png"),
+            src: require("@/assets/images/video3.png"),
           },
            {
-            title: "Réforme législative du droit d’accès aux archives",
+            title: "Réforme législative du droit d’accès aux archives « secret-défense » : l’apport de la loi « PTAR » du 30 juillet 2021",
             daytime: "10 août 2021",
-            src: require("@/assets/images/article-cover.png"),
+            src: require("@/assets/images/video4.png"),
           },
            {
-            title: "La loi Egalim n’a pas résolu les relations entre ",
+            title: "La loi Egalim n’a pas résolu les relations entre les agriculteurs et la grande distribution",
             daytime: "10 août 2021",
-            src: require("@/assets/images/article-cover.png"),
+            src: require("@/assets/images/video5.png"),
           }
         ]
       }
@@ -48,14 +48,32 @@ import Card from './Card.vue'
 <style lang="stylus">
 .carousel
   display flex
-  justify-content space-around
-  align-items center
+  .card:nth-child(even)
+    display none
   .card 
     width 350px
+    .card__title
+      font-size 25px
   .card img
-    width 350px !important
+    width 100%
+  
   .btn.arrow
     padding: 21px 16px 21px 17px;
     background-color: #ffb563;
     color #2d2d2d
+    border none
+    margin auto 0
+
+  .card:hover
+    .card__title 
+      text-decoration underline
+
+@media (min-width: 1131px)
+  .carousel
+    flex-direction row
+    justify-content space-around
+    .card
+      display block !important
+
+
 </style>
