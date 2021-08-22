@@ -1,98 +1,113 @@
 <template>
-  <main>
-    <Navbar/>
-    <div class="container">
-      <section class="cover__container">
-        <Card 
-            v-for="article in covers" :key="article.id"
-            :title="article.title"
-            :daytime="article.daytime"
-            :description="article.description"
-            :src="article.src"
-            :tag="article.tag"
-            :class_description="article.class_description"
-            :class_title="article.class_title"
-          />
-      </section>
-      <section class="articles-container">
-        <div class="article-group">
+  <div>
+    <header>
+      <Navbar/>
+    </header>
+    <main>
+      <div class="container">
+        <section class="cover__container">
           <Card 
-            v-for="article in articles" :key="article.id"
-            :title="article.title"
-            :daytime="article.daytime"
-            :description="article.description"
-            :src="article.src"
-            :tag="article.tag"
-            :alt="article.alt"
-          />
+              v-for="article in covers" :key="article.id"
+              :title="article.title"
+              :daytime="article.daytime"
+              :description="article.description"
+              :src="article.src"
+              :tag="article.tag"
+              :class_description="article.class_description"
+              :class_title="article.class_title"
+            />
+        </section>
+        <section class="articles-container">
+          <div class="article-group">
+            <Card 
+              v-for="article in articles" :key="article.id"
+              :title="article.title"
+              :daytime="article.daytime"
+              :description="article.description"
+              :src="article.src"
+              :tag="article.tag"
+              :alt="article.alt"
+            />
+          </div>
+        </section>
+      </div>
+      <section class="members__container">
+        <div class="container">
+          <h2 class="section__title">Nos présidents d’honneur</h2>
+          <div class="members__wrap">
+            <Card 
+              v-for="member in members" :key="member.id"
+              :title="member.title"
+              :daytime="member.daytime"
+              :description="member.description"
+              :src="member.src"
+              :tag="member.tag"
+              :alt="member.alt"
+            />
+          </div>
+            <div class="cta">
+              <Button title="Découvrir les membres du club" btnclass="white"/>
+            </div>
         </div>
       </section>
-    </div>
-    <section class="members__container">
-      <div class="container">
-        <h2 class="section__title">Nos présidents d’honneur</h2>
-        <div class="members__wrap">
-           <Card 
-            v-for="member in members" :key="member.id"
-            :title="member.title"
-            :daytime="member.daytime"
-            :description="member.description"
-            :src="member.src"
-            :tag="member.tag"
-            :alt="member.alt"
-          />
-        </div>
-          <div class="cta">
-            <Button title="Découvrir les membres du club" btnclass="white"/>
+
+      <section class="news__container">
+        <div class="container">
+          <h2 class="section__title">La semaine juridique</h2>
+          <div class="card-group">
+            <Card
+            v-for="newsletter in news" :key="newsletter.id"
+            :title="newsletter.title"
+            :description="newsletter.description"
+            :positioning="newsletter.positioning"
+            :src="newsletter.src">
+              <Button title="Découvrir l’article" btnclass="yellow"/>
+            </Card>
+            
           </div>
-      </div>
-    </section>
-
-    <section class="news__container">
-      <div class="container">
-        <h2 class="section__title">La semaine juridique</h2>
-        <div class="card-group">
-          <Card
-          v-for="newsletter in news" :key="newsletter.id"
-          :title="newsletter.title"
-          :description="newsletter.description"
-          :positioning="newsletter.positioning"
-          :src="newsletter.src">
-            <Button title="Découvrir l’article" btnclass="yellow"/>
-          </Card>
-          
+          <h2 class="section__title">Nos présidents d’honneur</h2>
         </div>
-        <h2 class="section__title">Nos présidents d’honneur</h2>
-      </div>
-    </section>
+      </section>
 
-    <section class="partners-container">
-      <div class="container">
-        <h2 class="section__title">Nos partenaires</h2>
-        <Partners/>
-        <div class="cta">
-          <Button title="Voir tous les partenaires" btnclass="yellow"/>
+      <section class="partners-container">
+        <div class="container">
+          <h2 class="section__title">Nos partenaires</h2>
+          <Partners/>
+          <div class="cta">
+            <Button title="Voir tous les partenaires" btnclass="yellow"/>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="contact-container">
-      <div class="container">
-        <h2 class="section__title">Nous contacter</h2>
-        <span class="help-text">Afin de traiter votre demande dans les plus brefs délais, nous vous invitons à utiliser le formulaire ci-dessous.</span>
-        <p>Attention : Le Club des juristes n’est pas un cabinet d’avocats, il n’est pas en mesure de répondre aux questions portant sur des situations personnelles. Nous vous invitons pour cela à vous adresser directement aux professionnels concernés. Merci pour votre compréhension.</p>
-        <ContactForm/>
-      </div>
-    </section>
-  </main>
+      <section class="videos__section">
+        <div class="container">
+          <h2 class="section__title">Dernières vidéos du club</h2>
+        </div>
+        <Carousel/>
+      </section>
+
+      <section class="contact-container">
+        <div class="container">
+          <h2 class="section__title">Nous contacter</h2>
+          <span class="help-text">Afin de traiter votre demande dans les plus brefs délais, nous vous invitons à utiliser le formulaire ci-dessous.</span>
+          <p>Attention : Le Club des juristes n’est pas un cabinet d’avocats, il n’est pas en mesure de répondre aux questions portant sur des situations personnelles. Nous vous invitons pour cela à vous adresser directement aux professionnels concernés. Merci pour votre compréhension.</p>
+          <ContactForm/>
+        </div>
+      </section>
+    </main>
+    <Footbar/>
+  </div>
+
 </template>
 
 <script>
 import Card from './components/Card.vue'
 import Navbar from './components/Navbar.vue'
+import Footbar from './components/Footbar.vue'
 import Partners from './components/Partners.vue'
 import Button from './components/Button.vue'
 import ContactForm from './components/ContactForm.vue'
+import Carousel from './components/Carousel.vue'
 
 export default {
   name: 'App',
@@ -101,7 +116,9 @@ export default {
     Navbar,
     Partners,
     Button,
-    ContactForm
+    ContactForm,
+    Footbar,
+    Carousel
   },
   data() {
     return {
@@ -175,20 +192,21 @@ export default {
 </script>
 
 <style lang="stylus">
+
 body 
   margin 0
   font-size 100%
   font-family: 'Poppins', sans-serif;
 
 .container {
-  width 80%
+  width 95%
   margin 0 auto
 }
 
 .section__title
-  font-size: 1.87em;
+  font-size: 3.43em;
   margin-bottom 50px
-
+  font-weight: normal;
 .cta 
   text-align center
 
@@ -250,7 +268,10 @@ body
     color: #2d2d2d;
 
 
-@media (min-width: 800px)
+@media (min-width: 1131px)
+  .container {
+    width 80%
+  }
   .article-group
     display flex
     justify-content space-between
@@ -272,4 +293,7 @@ body
         text-decoration  underline
       img:hover
         filter grayscale(0)
+  .videos__section
+    padding: 70px 49px 70px 46px;
+    background-color: #f2f2f2;
 </style>
