@@ -60,7 +60,7 @@
     i
       margin-left 0.80em
 
-@media (min-width: 800px)
+@media (min-width: 1131px)
   .row
     display flex
   .card-logo
