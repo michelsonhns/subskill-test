@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-form">
+  <form class="contact-form">
     <div class="form-group">
       <div class="form-input">
         <label for="lastName">Nom <span>*</span></label>
@@ -28,29 +28,41 @@
         <textarea name="" id="message" rows="3" placeholder="Votre message"></textarea>
       </div>
     </div>
-  </div>
+    <div>
+      <Button
+      title="envoyer"
+      btnclass="yellow"/>
+    </div>
+  </form>
 </template>
 
 <script>
+import Button from './Button.vue'
+
   export default {
-    
+    components: {
+      Button,
+    },
   }
 </script>
 
 <style lang="stylus" scoped>
 .contact-form
   padding 30px 0
+  
   label
     display block
     margin 1em 0
     font-size 1.87em
     span
       color #ffb563
+  
   input, select, textarea
     border none
     border-bottom solid 1px #dcdcdc
     padding-bottom 5px
     width 100%
+  
   ::placeholder, select
     font-family sans-serif
     color: #848484;
@@ -59,15 +71,24 @@
 .form-group
   display flex
   flex-direction column
+
 input:focus , select:focus, textarea:focus
   outline none
+
 @media (min-width: 1131px)
   .form-input:first-child
     margin-right 2em
+
   .form-input
     width 50%
+
   .textarea
     width 100%
+
   .form-group
     flex-direction row
+
+  .textarea
+    margin-bottom 50px
+
 </style>
