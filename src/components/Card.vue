@@ -36,6 +36,11 @@
 </script>
 
 <style lang="stylus" scoped>
+@font-face
+  font-family Seshat
+  font-style normal
+  src url(../assets/fonts/seshat/Seshat.otf) format("opentype")
+  
 .card
   margin-bottom 70px
   .card__tag
@@ -56,7 +61,7 @@
   
   .card__title
     font-size 1.875em
-    font-family Seshat
+    font-family 'Seshat', sans-serif
     color #2d2d2d
     margin 10px 0
 
@@ -68,7 +73,7 @@
     margin-top 1.8em
 
     
-@media (min-width: 800px)
+@media (min-width: 1131px)
   .is-three-quarters
     width: 759px;
   
